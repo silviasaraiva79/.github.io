@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra - Sílvia Saraiva</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- EmailJS SDK (Obrigatório para o envio do email pelo frontend) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // Substituir pelo seu Public Key do EmailJS
+      emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+  </script>
+
+  <style>
+    .checkout-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 1.5rem;
+    }
+    
+    .checkout-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .checkout-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+    }
+    
+    .checkout-sidebar {
+      background-color: var(--color-background-alt);
+      padding: 2.5rem;
+      border-right: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .checkout-main {
+      padding: 2.5rem;
+    }
+    
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .payment-instructions {
+      background: #fdfae3;
+      border-left: 4px solid #f59e0b;
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 2rem;
+    }
+    
+    .mbway-logo {
+      display: inline-block;
+      background: #000;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-left: 5px;
+    }
+    
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+      background: var(--color-background-alt);
+      border-radius: var(--radius-md);
+    }
+    
+    @media (max-width: 768px) {
+      .checkout-card {
+        grid-template-columns: 1fr;
+      }
+      .checkout-sidebar {
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+    }
+  </style>
+</head>
+<body style="background-color: var(--color-background);">
+
+  <!-- Navbar Simples -->
+  <nav class="navbar" style="position: relative;">
+    <div class="container" style="justify-content: center;">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+        <img src="assets/images/media__1782418586948.png" alt="Sílvia Saraiva Logo" style="height: 65px;">
+        <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">Sílvia Saraiva</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="checkout-container fade-in">
+    <div class="checkout-header">
+      <img src="assets/images/media__1782418586948.png" alt="Logo Detalhe" style="height: 50px; margin-bottom: 1rem; opacity: 0.5;">
+      <h1 class="mb-1">Finalizar compra</h1>
+      <p class="text-muted">Preenche os dados para comprares o ebook 'Segurança do Idoso com Demência de Alzheimer'</p>
+    </div>
+
+    <div class="checkout-card">
+      
+      <!-- Resumo da Compra -->
+      <div class="checkout-sidebar">
+        <div class="text-center mb-4">
+          <img src="assets/images/media__1782418587411.png" alt="Capa Ebook" style="max-width: 150px; margin: 0 auto; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);">
+        </div>
+        
+        <h3 class="mb-3">Resumo da compra</h3>
+        
+        <div class="summary-item">
+          <span class="text-muted">Produto:</span>
+          <span style="font-weight: 500; text-align: right;">Ebook "Segurança do Idoso com Demência de Alzheimer"</span>
+        </div>
+        
+        <div class="summary-item">
+          <span class="text-muted">Formato:</span>
+          <span style="font-weight: 500;">Digital (PDF)</span>
+        </div>
+        
+        <div class="summary-item" style="border: none;">
+          <span class="text-muted" style="font-size: 1.25rem;">Total:</span>
+          <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">20 €</span>
+        </div>
+      </div>
+      
+      <!-- Formulário e Instruções -->
+      <div class="checkout-main">
+        
+        <div id="success-message" class="success-message fade-in">
+          <i class="fa-solid fa-circle-check" style="font-size: 4rem; color: var(--color-tertiary); margin-bottom: 1rem;"></i>
+          <h2>Pedido Enviado!</h2>
+          <p class="text-muted mt-2">Obrigado pelo seu interesse. Assim que confirmarmos a receção do valor de 20 € no MB WAY, enviaremos o seu ebook pelo método que escolheu.</p>
+          <a href="index.html" class="btn btn-secondary mt-4">Voltar à página inicial</a>
+        </div>
+
+        <form id="checkout-form">
+          <div class="payment-instructions">
+            <h4 style="margin-bottom: 0.5rem; display: flex; align-items: center;">
+              <i class="fa-solid fa-mobile-screen-button" style="margin-right: 8px;"></i> Pagamento por MB WAY <span class="mbway-logo">MB WAY</span>
+            </h4>
+            <p style="font-weight: 500; margin-bottom: 0.5rem;">Para concluir a compra, envia 20 € por MB WAY para o número:</p>
+            <p style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); letter-spacing: 1px; margin-bottom: 1rem;">+351 964 015 395</p>
+            <p style="font-size: 0.875rem; color: #b45309;">
+              <i class="fa-solid fa-circle-info"></i> Nota: Depois de enviar o pagamento, preencha o formulário abaixo para confirmarmos a compra e enviar o ebook.
+            </p>
+          </div>
+
+          <h3 class="mb-3">Os seus dados</h3>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="first_name" class="form-label">Primeiro nome</label>
+              <input type="text" id="first_name" name="first_name" class="form-control" required placeholder="Ex: Maria">
+            </div>
+            
+            <div class="form-group">
+              <label for="last_name" class="form-label">Último nome</label>
+              <input type="text" id="last_name" name="last_name" class="form-control" required placeholder="Ex: Silva">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="payment_phone" class="form-label">Número de telefone usado no MB WAY</label>
+            <input type="tel" id="payment_phone" name="payment_phone" class="form-control" required placeholder="Ex: 912 345 678" pattern="[0-9]{9,15}" title="Insira um número de telefone válido">
+            <small class="text-muted" style="display: block; margin-top: 0.25rem;">Necessário para podermos associar o pagamento a si.</small>
+          </div>
+
+          <div class="form-group" style="margin-top: 2rem;">
+            <label class="form-label mb-2">Como quer receber o ebook?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="delivery_method" value="email" checked>
+                Email
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="delivery_method" value="whatsapp">
+                WhatsApp
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group" id="email-group">
+            <label for="email" class="form-label">O seu endereço de Email</label>
+            <input type="email" id="email" name="email" class="form-control" required placeholder="Ex: maria.silva@email.com">
+          </div>
+
+          <div class="form-group" id="whatsapp-group" style="display: none;">
+            <label for="whatsapp" class="form-label">O seu número de WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ex: 912 345 678">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; font-size: 1.125rem;">
+            <i class="fa-solid fa-lock" style="margin-right: 8px;"></i> Finalizar compra
+          </button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Script da lógica -->
+  <script src="js/checkout.js"></script>
+</body>
+</html>
