@@ -228,14 +228,14 @@ section {
 footer {
   background-color: var(--color-primary);
   color: var(--color-surface);
-  padding: 4rem 0 2rem;
+  padding: 3rem 0 1.5rem;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  margin-bottom: 3rem;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .footer-col h4 {
@@ -257,10 +257,39 @@ footer {
 
 .footer-bottom {
   text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.6);
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal-links a {
+  color: rgba(255,255,255,0.7);
   font-size: 0.875rem;
+}
+
+.footer-legal-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+  }
 }
 
 /* Responsive */
@@ -545,4 +574,55 @@ footer {
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+}
+
+/* Cookie Banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-surface);
+  color: var(--color-text-main);
+  padding: 1.5rem;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 9999;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 4px solid var(--color-tertiary);
+}
+
+.cookie-banner.show {
+  transform: translateY(0);
+}
+
+.cookie-banner-text {
+  font-size: 0.875rem;
+  text-align: center;
+  max-width: 800px;
+}
+
+.cookie-banner-text a {
+  color: var(--color-tertiary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.cookie-banner-btn {
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .cookie-banner {
+    flex-direction: row;
+    padding: 1rem 2rem;
+  }
+  .cookie-banner-text {
+    text-align: left;
+  }
 }

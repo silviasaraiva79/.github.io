@@ -467,9 +467,14 @@
           <div class="logo mb-2" style="color: white; display: flex; align-items: center; gap: 0.5rem;">
             <img src="assets/images/media__1782418586948.png" alt="Sílvia Saraiva Logo" style="height: 65px;"> 
           </div>
-          <p style="color: rgba(255,255,255,0.8); max-width: 300px;">
+          <p style="color: rgba(255,255,255,0.8); max-width: 300px; margin-bottom: 1.5rem;">
             Assistente Social • Mestre em Gerontologia • Especialista em Geriatria
           </p>
+          <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+            <a href="https://www.facebook.com/silviaalexandra.saraiva" target="_blank" style="color: white; opacity: 0.8; transition: opacity 0.2s;"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/_saraivasilvia/" target="_blank" style="color: white; opacity: 0.8; transition: opacity 0.2s;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@79ssaraiva?lang=pt-BR" target="_blank" style="color: white; opacity: 0.8; transition: opacity 0.2s;"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
         </div>
         
         <div class="footer-col">
@@ -485,7 +490,11 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 Sílvia Saraiva. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Sílvia Saraiva. Todos os direitos reservados.</p>
+        <div class="footer-legal-links">
+          <a href="termos.html">Termos e Condições</a>
+          <a href="privacidade.html">Privacidade e Cookies</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -742,6 +751,32 @@
             btn.textContent = origText;
             btn.disabled = false;
           });
+      });
+    });
+  </script>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-banner-text">
+      Utilizamos cookies para garantir a melhor experiência no nosso website. Ao continuar a navegar, concorda com a nossa 
+      <a href="privacidade.html">Política de Privacidade e Cookies</a>.
+    </div>
+    <div class="cookie-banner-btn">
+      <button id="accept-cookies" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.875rem;">Aceitar</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem('cookiesAccepted')) {
+        setTimeout(() => {
+          document.getElementById('cookie-banner').classList.add('show');
+        }, 1000);
+      }
+
+      document.getElementById('accept-cookies').addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').classList.remove('show');
       });
     });
   </script>
