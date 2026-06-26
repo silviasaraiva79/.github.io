@@ -42,7 +42,7 @@
     
     .info-graphic {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
       gap: 1.5rem;
       margin: 3rem 0;
     }
@@ -71,7 +71,7 @@
     
     .numbered-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
       gap: 2rem;
     }
     
@@ -181,8 +181,8 @@
         Criei este guia para quem vive o cuidado na prática e quer reduzir sustos, conflitos e decisões feitas no limite.
       </p>
       
-      <div style="margin: 3rem 0;">
-        <img src="assets/images/media__1782418587411.png" alt="Capa do Ebook" style="max-width: 350px; margin: 0 auto; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+      <div style="margin: 3rem 0; width: 100%;">
+        <img src="assets/images/media__1782418587411.png" alt="Capa do Ebook" style="width: 100%; max-width: 350px; margin: 0 auto; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
       </div>
       
       <a href="javascript:void(0)" onclick="openCheckoutModal()" class="btn btn-primary" style="font-size: 1.25rem; padding: 1rem 3rem;">QUERO ACESSO AO GUIA</a>

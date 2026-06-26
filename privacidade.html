@@ -14,29 +14,45 @@
   <link rel="stylesheet" href="css/styles.css">
   
   <style>
+    body { background-color: #f8fafc; }
+    .legal-content-wrapper {
+      padding: 120px 1.5rem 60px;
+    }
     .legal-content {
       max-width: 800px;
       margin: 0 auto;
-      padding: 120px 2rem 80px;
+      padding: 3rem;
+      background-color: white;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
     }
     .legal-content h1 {
+      font-size: 1.875rem;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+    .legal-content .last-updated {
+      color: #64748b;
+      font-size: 0.875rem;
       margin-bottom: 2rem;
-      color: var(--color-primary);
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e2e8f0;
     }
     .legal-content h2 {
-      font-size: 1.5rem;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--color-secondary);
+      font-size: 1.25rem;
+      color: #1e293b;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
     }
     .legal-content p, .legal-content li {
+      color: #475569;
+      line-height: 1.6;
       margin-bottom: 1rem;
-      line-height: 1.7;
-      color: var(--color-text-main);
+      font-size: 0.9375rem;
     }
-    .legal-content ul {
-      margin-bottom: 1.5rem;
-      padding-left: 1.5rem;
+    @media (max-width: 768px) {
+      .legal-content { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -66,9 +82,10 @@
     </div>
   </nav>
 
-  <main class="legal-content fade-in">
-    <h1>Política de Privacidade e Cookies</h1>
-    <p><em>Última atualização: Junho de 2026</em></p>
+  <div class="legal-content-wrapper">
+    <main class="legal-content fade-in">
+      <h1>Política de Privacidade e Cookies</h1>
+      <p class="last-updated">Última atualização: Junho de 2026</p>
     
     <h2>1. Quem Somos</h2>
     <p>Sílvia Saraiva ("nós", "nosso") está comprometida em proteger a privacidade dos seus clientes e visitantes do website. Esta Política de Privacidade explica como recolhemos, usamos e protegemos as suas informações pessoais de acordo com o Regulamento Geral sobre a Proteção de Dados (RGPD).</p>
@@ -110,7 +127,8 @@
     
     <p><strong>Como gerir ou apagar Cookies?</strong><br>
     Pode, a qualquer momento, apagar ou bloquear os cookies nas definições do seu navegador (Google Chrome, Safari, Firefox, etc.). Contudo, o bloqueio total poderá interferir com a utilização do website.</p>
-  </main>
+    </main>
+  </div>
 
   <!-- Rodapé -->
   <footer>
@@ -120,9 +138,14 @@
           <div class="logo mb-2" style="color: white; display: flex; align-items: center; gap: 0.5rem;">
             <img src="assets/images/media__1782418586948.png" alt="Sílvia Saraiva Logo" style="height: 65px;"> 
           </div>
-          <p style="color: rgba(255,255,255,0.8); max-width: 300px;">
+          <p style="color: rgba(255,255,255,0.8); max-width: 300px; margin-bottom: 1.5rem;">
             Assistente Social • Mestre em Gerontologia • Especialista em Geriatria
           </p>
+          <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+            <a href="https://www.facebook.com/silviaalexandra.saraiva" target="_blank" style="color: white; opacity: 0.8; transition: opacity 0.2s;"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/_saraivasilvia/" target="_blank" style="color: white; opacity: 0.8; transition: opacity 0.2s;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@79ssaraiva?lang=pt-BR" target="_blank" style="color: white; opacity: 0.8; transition: opacity 0.2s;"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
         </div>
         
         <div class="footer-col">
@@ -130,30 +153,18 @@
           <ul class="footer-links">
             <li><a href="index.html">Início</a></li>
             <li><a href="index.html#sobre">Sobre Mim</a></li>
+            <li><a href="index.html#comunidade">Comunidade</a></li>
             <li><a href="ebook.html">Ebook</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Informação Legal</h4>
-          <ul class="footer-links">
-            <li><a href="termos.html">Termos e Condições</a></li>
-            <li><a href="privacidade.html">Privacidade e Cookies</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Redes Sociais</h4>
-          <ul class="footer-links">
-            <li><a href="https://www.facebook.com/silviaalexandra.saraiva" target="_blank">Facebook</a></li>
-            <li><a href="https://www.instagram.com/_saraivasilvia/" target="_blank">Instagram</a></li>
-            <li><a href="https://www.tiktok.com/@79ssaraiva?lang=pt-BR" target="_blank">TikTok</a></li>
           </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
         <p>&copy; 2026 Sílvia Saraiva. Todos os direitos reservados.</p>
+        <div class="footer-legal-links">
+          <a href="termos.html">Termos e Condições</a>
+          <a href="privacidade.html">Privacidade e Cookies</a>
+        </div>
       </div>
     </div>
   </footer>
