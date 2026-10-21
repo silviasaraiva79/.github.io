@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         to_email: 'compras.efetuadas.ebook@gmail.com',
         first_name: formData.get('first_name'),
         last_name: formData.get('last_name'),
-        payment_phone: formData.get('payment_phone'),
+        payment_phone: 'N/A (Gratuito)',
         delivery_method: deliveryMethod,
         contact_info: contactInfo,
-        price: '20 €'
+        price: '0 € (Gratuito)'
       };
 
       /* 
