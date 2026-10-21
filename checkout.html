@@ -140,7 +140,10 @@
         
         <div class="summary-item" style="border: none;">
           <span class="text-muted" style="font-size: 1.25rem;">Total:</span>
-          <span style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">20 €</span>
+          <div>
+            <span style="text-decoration: line-through; opacity: 0.6; font-size: 1.1rem; margin-right: 6px;">20 €</span>
+            <span style="font-size: 1.5rem; font-weight: 700; color: #059669;">0 € (GRÁTIS)</span>
+          </div>
         </div>
       </div>
       
@@ -150,43 +153,26 @@
         <div id="success-message" class="success-message fade-in">
           <i class="fa-solid fa-circle-check" style="font-size: 4rem; color: var(--color-tertiary); margin-bottom: 1rem;"></i>
           <h2>Pedido Enviado!</h2>
-          <p class="text-muted mt-2">Obrigado pelo seu interesse. Assim que confirmarmos a receção do valor de 20 € no MB WAY, enviaremos o seu ebook pelo método que escolheu.</p>
+          <p class="text-muted mt-2">O seu pedido foi registado com sucesso! O ebook será enviado muito em breve pelo método que escolheu.</p>
           <a href="index.html" class="btn btn-secondary mt-4">Voltar à página inicial</a>
         </div>
 
         <form id="checkout-form">
-          <div class="payment-instructions">
-            <h4 style="margin-bottom: 0.5rem; display: flex; align-items: center;">
-              <i class="fa-solid fa-mobile-screen-button" style="margin-right: 8px;"></i> Pagamento por MB WAY <span class="mbway-logo">MB WAY</span>
-            </h4>
-            <p style="font-weight: 500; margin-bottom: 0.5rem;">Para concluir a compra, envia 20 € por MB WAY para o número:</p>
-            <p style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); letter-spacing: 1px; margin-bottom: 1rem;">+351 964 015 395</p>
-            <p style="font-size: 0.875rem; color: #b45309;">
-              <i class="fa-solid fa-circle-info"></i> Nota: Depois de enviar o pagamento, preencha o formulário abaixo para confirmarmos a compra e enviar o ebook.
-            </p>
-          </div>
-
           <h3 class="mb-3">Os seus dados</h3>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
               <label for="first_name" class="form-label">Primeiro nome</label>
-              <input type="text" id="first_name" name="first_name" class="form-control" required placeholder="Ex: Maria">
+              <input type="text" id="first_name" name="first_name" class="form-control" required>
             </div>
             
             <div class="form-group">
               <label for="last_name" class="form-label">Último nome</label>
-              <input type="text" id="last_name" name="last_name" class="form-control" required placeholder="Ex: Silva">
+              <input type="text" id="last_name" name="last_name" class="form-control" required>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="payment_phone" class="form-label">Número de telefone usado no MB WAY</label>
-            <input type="tel" id="payment_phone" name="payment_phone" class="form-control" required placeholder="Ex: 912 345 678" pattern="[0-9]{9,15}" title="Insira um número de telefone válido">
-            <small class="text-muted" style="display: block; margin-top: 0.25rem;">Necessário para podermos associar o pagamento a si.</small>
-          </div>
-
-          <div class="form-group" style="margin-top: 2rem;">
+          <div class="form-group" style="margin-top: 1rem;">
             <label class="form-label mb-2">Como quer receber o ebook?</label>
             <div class="radio-group">
               <label class="radio-label">
@@ -202,16 +188,16 @@
 
           <div class="form-group" id="email-group">
             <label for="email" class="form-label">O seu endereço de Email</label>
-            <input type="email" id="email" name="email" class="form-control" required placeholder="Ex: maria.silva@email.com">
+            <input type="email" id="email" name="email" class="form-control" required>
           </div>
 
           <div class="form-group" id="whatsapp-group" style="display: none;">
             <label for="whatsapp" class="form-label">O seu número de WhatsApp</label>
-            <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ex: 912 345 678">
+            <input type="tel" id="whatsapp" name="whatsapp" class="form-control">
           </div>
 
           <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; font-size: 1.125rem;">
-            <i class="fa-solid fa-lock" style="margin-right: 8px;"></i> Finalizar compra
+            <i class="fa-solid fa-download" style="margin-right: 8px;"></i> Descarregar Ebook Grátis
           </button>
         </form>
       </div>
